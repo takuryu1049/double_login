@@ -1,6 +1,11 @@
-<h2>Log in</h2>
+<div class = "flex-style">
+<div class = "auth_form">
+<div class = "logo">Double<%= icon('fas', 'user-friends') %>login</div>
+<h2>会社ログイン画面</h2>
+<%= form_with model: @company, url: company_session_path, local: true do |f| %>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= render "shared/error_messages", model: f.object %>
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -19,8 +24,11 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "ログイン" %>
   </div>
 <% end %>
 
 <%= render "companies/shared/links" %>
+
+</div>
+</div>
