@@ -54,3 +54,11 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "devise"
+
+gem 'font-awesome-sass'
+
+gem "pry-rails"
+
+gem "zxcvbn-ruby", :require => 'zxcvbn'
+
+gem 'recaptcha'
