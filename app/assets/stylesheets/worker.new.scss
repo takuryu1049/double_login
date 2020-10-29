@@ -1,0 +1,51 @@
+
+
+.flex-style{
+  display: flex;
+  align-items: center !important;
+  justify-content: center;
+  padding:60px;
+  text-align: center;
+  
+  .auth_form {
+    border-radius: 8px;
+    background-color:rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    font-size:30px;
+    h2{
+      padding: 20px;
+      font-size: 30px;
+      opacity: 0.8;
+    }
+    .logo{
+      width: 600px;
+      font-size: 60px;
+      padding-bottom: 30px;
+      color: #4dabff;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      border-bottom: solid 1px;
+      border-bottom-color:rgba(0,0,0,0.1) ;
+    }
+    .field{
+      padding: 20px 0px;
+    }
+    label{
+      color: #656873;
+    }
+    input{
+      border-color: #d8d8d8;
+      border: 1px solid #ced4da;
+      border-radius: 3px;
+      padding: 15px;
+      width:330px;
+        }
+    .actions input{
+      @extend input;
+      margin-bottom: 20px;
+    }
+  }
+
+}
+
+
