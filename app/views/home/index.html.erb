@@ -1,0 +1,24 @@
+
+<div id ="at">Double<%= icon('fas', 'user-friends') %>login</div>
+
+<div class = "container">
+  <div class = "second">
+  セカンド
+    <div class  = "third" >
+  サード
+    </div>
+  </div>
+</div> 
+
+<% if company_signed_in? && worker_signed_in? %>
+<%= link_to "top", top_path,id: "ata" %>
+<% elsif company_signed_in? %>
+<%= link_to "社員log", new_worker_session_path,id: "ata" %>
+<% else %>
+<%= link_to "sign_up", new_company_registration_path,id: "ata" %>
+<% end %>
+<%= link_to "sign_in", new_company_session_path,id: "atwo" %>
+
+<%= video_tag "/assets/videos/coverr-drone-shot-in-salta-argentina-10-9555.mp4", loop: true, autoplay: true, muted: true %>
+
+<%# video_tag "https://about.fb.com/wp-content/uploads/2020/09/Final_broll_16x9-web.mp4", loop: true, autoplay: true, muted: true %>
