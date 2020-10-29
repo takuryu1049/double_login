@@ -1,0 +1,3 @@
+<%= "#{current_company.name}の#{current_worker.name}ようこそ！"%>
+<%= link_to 'ログアウト', destroy_worker_session_path, method: :delete, class: "logout" %>
+<%= flash[:notice] %>
