@@ -1,1 +1,84 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
 
+// @extendで継承はできているが、上書きされているので、効果が分かりづらい。
+$main_font: white;
+$logo_font: blue;
+$second_logo_font: red;
+$second_size: 30px;
+@mixin lp($font-family:monospace){
+  font-weight: bold;
+  font-family: $font-family;
+}
+.container{
+  height: 30px;
+  width: 130px;
+  position: absolute;
+  z-index: 120;
+  color: white;
+  top: 30px;
+  right: 30px;
+  .second{
+    color: $second_logo_font;
+    font-size: $second_size;
+    .third{
+      @include lp(inherit);
+      color: blue;
+      font-size: $second_size +10;
+      @extend .second
+    }
+  }
+}
+video{
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  }
+  #at{
+    position: absolute;
+    z-index: 100;
+    color: $main_font;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 50px;
+    top: 50%;
+    left: 40%;
+    opacity: 0.8;
+    &:hover{
+      opacity: 0.5;
+    }
+    .fas{
+      color: $logo_font;
+    }
+  }
+
+  #ata{
+    width: 300px;
+    position: absolute;
+    z-index: 100;
+    color: $main_font;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 80px;
+    text-align: center;
+    top: 30px;
+    left: 30px;
+    &:hover{
+      opacity: 0.7;
+    }
+  }
+  #atwo{
+    @extend #ata;
+    left: 330px;
+    &:hover{
+      opacity: 0.7;
+    }
+  }
+  /* 
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com 
+Twitter: @rich_clark
+*/
