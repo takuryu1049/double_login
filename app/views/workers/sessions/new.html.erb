@@ -1,6 +1,10 @@
-<h2>Log in</h2>
+<div class = "flex-style">
+<div class = "auth_form">
+<div class = "logo">Double<%= icon('fas', 'user-friends') %>login</div>
+<h2>社員ログイン</h2>
+<%= flash.now[:notice] %>
+<%= form_with model: @worker, url: worker_session_path, local: true do |f| %>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -24,3 +28,6 @@
 <% end %>
 
 <%= render "workers/shared/links" %>
+
+</div>
+</div>
