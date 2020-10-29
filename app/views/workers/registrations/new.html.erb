@@ -1,29 +1,55 @@
-<h2>Sign up</h2>
+<div class = "flex-style">
+<div class = "auth_form">
+<div class = "logo">Double<%= icon('fas', 'user-friends') %>login</div>
+<h2>社員登録画面</h2>
+<%= form_with model: @worker, url: worker_registration_path, local: true do |f| %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "workers/shared/error_messages", resource: resource %>
+  <%= render "shared/error_messages", model: f.object %>
+
+  <%#会社情報に関しては、mergeできなかった為、要素を隠して送信する事によって、コントローラーでデータを受け取れるようにする。%>
+  <div class="field">
+    <%= "登録ID#{current_company.id}"%>
+    <br>
+    <%= "#{current_company.name}の社員登録をします" %>
+    <%= f.hidden_field :company_id, :value => current_company.id%>
+  </div>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :worker_id, "社員ID" %><br />
+    <%= f.text_field :worker_id, autofocus: true, placeholder: "\ue013", class: 'fab', autocomplete: "worker_id" %>
+  </div>
+  <div class="field">
+    <%= f.label :name, "名前" %><br />
+    <%= f.text_field :name, autocomplete: "name" %>
+  </div>
+
+    <div class="field">
+    <%= f.label :gender, "性別を選択" %><br />
+    <%= f.radio_button :gender, 0 %>男 <%= f.radio_button :gender, 1 %>女  
+  </div>
+
+  <div class="field">
+    <%= f.label :email, "メールアドレス"  %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :password, "パスワード"  %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em>(<%= @minimum_password_length %>文字以上)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation, "確認用パスワード"  %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "登録" %>
   </div>
 <% end %>
-
 <%= render "workers/shared/links" %>
+</div>
+</div>
